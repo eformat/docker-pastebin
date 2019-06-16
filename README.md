@@ -168,6 +168,15 @@ haste() { a=$(cat); curl -X POST -s -d "$a" http://hastebin.com/documents | awk 
 ## Windows
 If you want to acces via Windows have a look at [Aidan Ryan's WinHaste](https://github.com/ajryan/WinHaste)
 
+# OpenShift
+
+```
+oc new-project pastebin
+oc new-build --binary --name=pastebin -l app=pastebin
+oc start-build pastebin --from-file=. --follow
+oc expose svc pastebin
+```
+
 # Issues
 
 For issues please stick to [github's issue tracker](https://github.com/mko-x/docker-pastebin/issues).

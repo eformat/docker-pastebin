@@ -10,7 +10,7 @@ RUN apk del git && npm install
 
 ADD conf/config.js /opt/haste/config.js
 
-VOLUME ["/opt/haste"]
+#VOLUME ["/opt/haste"]
 
 EXPOSE 80
 CMD ["npm", "start"]
